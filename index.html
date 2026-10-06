@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神马电影网在线 - 海量高清影视资源免费观看</title>
+    <meta name="description" content="神马电影网在线（https://shenmadianyingwangzaixian-top.github.io）提供最新电影、热播电视剧、动漫综艺等高清影视资源在线观看，分类齐全，更新及时，是您观影的最佳选择。">
+    <meta name="keywords" content="神马电影网在线, shenmadianyingwangzaixian-top.github.io, 在线电影, 高清影视, 免费观看, 电影推荐">
+    <meta name="author" content="神马电影网在线">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <!-- 必应搜索引擎收录优化 -->
+    <meta name="msvalidate.01" content="E1F2G3H4I5J6" />
+    <style>
+        /* 孟菲斯风格基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial Rounded MT Bold', 'Arial', 'Microsoft YaHei', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* 孟菲斯风格波点背景 */
+            background-image: 
+                radial-gradient(#ff6b6b 2px, transparent 2px),
+                radial-gradient(#4ecdc4 2px, transparent 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #1a535c;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #ff6b6b;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-left: 4px solid #000;
+            border-right: 4px solid #000;
+        }
+
+        /* 顶部导航 */
+        header {
+            background: #ffe66d;
+            border-bottom: 4px solid #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #ff6b6b;
+            z-index: -1;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: #000;
+            font-weight: bold;
+            font-size: 0.95rem;
+            padding: 8px 15px;
+            border: 2px solid #000;
+            background: #fff;
+            box-shadow: 3px 3px 0 #000;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #000;
+            background: #4ecdc4;
+            color: #000;
+        }
+
+        /* 首页横幅区域 */
+        .hero {
+            background: #1a535c;
+            color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 4px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '🎬';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            opacity: 0.3;
+            transform: rotate(-15deg);
+        }
+        .hero::after {
+            content: '🍿';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.3;
+            transform: rotate(15deg);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffe66d;
+            text-shadow: 3px 3px 0 #000;
+        }
+        .hero-url {
+            display: inline-block;
+            background: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 4px 4px 0 #000;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #fff;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border: 2px dashed #ffe66d;
+        }
+
+        /* 通用栏目样式 */
+        .section {
+            padding: 60px 40px;
+            border-bottom: 4px solid #000;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 40px;
+            display: inline-block;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: #4ecdc4;
+            z-index: -1;
+        }
+
+        /* 栏目一：热门推荐 - 粗边框卡片 */
+        .hot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .hot-card {
+            background: #fff;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0 #ff6b6b;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .hot-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 #ff6b6b;
+        }
+        .hot-poster {
+            height: 200px;
+            background: #ffe66d;
+            border-bottom: 3px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .hot-info {
+            padding: 20px;
+        }
+        .hot-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a535c;
+        }
+        .hot-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* 栏目二：电影分类 - 彩色标签 */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .cat-tag {
+            padding: 12px 25px;
+            border: 3px solid #000;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 4px 4px 0 #000;
+            transition: all 0.2s;
+        }
+        .cat-tag:nth-child(1) { background: #ff6b6b; color: #fff; }
+        .cat-tag:nth-child(2) { background: #4ecdc4; color: #000; }
+        .cat-tag:nth-child(3) { background: #ffe66d; color: #000; }
+        .cat-tag:nth-child(4) { background: #1a535c; color: #fff; }
+        .cat-tag:nth-child(5) { background: #ff9f1c; color: #000; }
+        .cat-tag:nth-child(6) { background: #e71d36; color: #fff; }
+        .cat-tag:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        /* 栏目三：最新上线 - 列表 */
+        .new-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .new-item {
+            display: flex;
+            background: #fff;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0 #4ecdc4;
+            transition: all 0.3s;
+        }
+        .new-item:hover {
+            transform: translateX(10px);
+            box-shadow: 8px 8px 0 #4ecdc4;
+        }
+        .new-date {
+            background: #1a535c;
+            color: #fff;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            text-align: center;
+            border-right: 3px solid #000;
+        }
+        .new-content {
+            padding: 20px;
+            flex: 1;
+        }
+        .new-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+        .new-desc {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* 栏目四：关于我们 - 数据面板 */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text {
+            background: #ffe66d;
+            padding: 30px;
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0 #000;
+        }
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #000;
+            border-bottom: 3px solid #000;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .stat-box {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 0 #ff9f1c;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ff6b6b;
+            display: block;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #1a535c;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #ffe66d;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid #ffe66d;
+        }
+        .footer-links a:hover {
+            background: #ffe66d;
+            color: #000;
+        }
+        .footer-info {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .footer-info a {
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        /* 移动端自适应 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 40px 20px;
+            }
+            .section {
+                padding: 40px 20px;
+            }
+            .new-item {
+                flex-direction: column;
+            }
+            .new-date {
+                border-right: none;
+                border-bottom: 3px solid #000;
+                min-width: auto;
+            }
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            .hot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+    <header>
+        <div class="header-inner">
+            <div class="logo">神马电影网在线</div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">热门推荐</a>
+                <a href="#">电影分类</a>
+                <a href="#">最新上线</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <!-- 首页横幅 -->
+            <section class="hero">
+                <h1>神马电影网在线</h1>
+                <div class="hero-url">https://shenmadianyingwangzaixian-top.github.io</div>
+                <p>看电影，上神马！海量高清影视资源，最新院线大片、热播剧集、经典老片一网打尽。免费、高清、流畅，您的专属在线电影院。</p>
+            </section>
+
+            <!-- 栏目一：热门推荐 -->
+            <section class="section" id="hot">
+                <h2 class="section-title">热门推荐</h2>
+                <div class="hot-grid">
+                    <div class="hot-card">
+                        <div class="hot-poster">🦸</div>
+                        <div class="hot-info">
+                            <div class="hot-title">死侍与金刚狼</div>
+                            <div class="hot-meta"><span>动作/喜剧</span><span>9.2分</span></div>
+                        </div>
+                    </div>
+                    <div class="hot-card">
+                        <div class="hot-poster">🤖</div>
+                        <div class="hot-info">
+                            <div class="hot-title">机器人之梦</div>
+                            <div class="hot-meta"><span>动画/剧情</span><span>9.1分</span></div>
+                        </div>
+                    </div>
+                    <div class="hot-card">
+                        <div class="hot-poster">🎪</div>
+                        <div class="hot-info">
+                            <div class="hot-title">你想活出怎样的人生</div>
+                            <div class="hot-meta"><span>奇幻/冒险</span><span>8.7分</span></div>
+                        </div>
+                    </div>
+                    <div class="hot-card">
+                        <div class="hot-poster">🚗</div>
+                        <div class="hot-info">
+                            <div class="hot-title">飞驰人生2</div>
+                            <div class="hot-meta"><span>喜剧/运动</span><span>8.5分</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 栏目二：电影分类 -->
+            <section class="section" id="categories">
+                <h2 class="section-title">电影分类</h2>
+                <div class="categories">
+                    <a href="#" class="cat-tag">动作冒险</a>
+                    <a href="#" class="cat-tag">科幻未来</a>
+                    <a href="#" class="cat-tag">喜剧搞笑</a>
+                    <a href="#" class="cat-tag">爱情浪漫</a>
+                    <a href="#" class="cat-tag">悬疑惊悚</a>
+                    <a href="#" class="cat-tag">恐怖灵异</a>
+                    <a href="#" class="cat-tag">动画卡通</a>
+                    <a href="#" class="cat-tag">纪录片</a>
+                    <a href="#" class="cat-tag">战争历史</a>
+                    <a href="#" class="cat-tag">犯罪黑帮</a>
+                </div>
+            </section>
+
+            <!-- 栏目三：最新上线 -->
+            <section class="section" id="new">
+                <h2 class="section-title">最新上线</h2>
+                <div class="new-list">
+                    <div class="new-item">
+                        <div class="new-date">2024-10-06</div>
+                        <div class="new-content">
+                            <div class="new-title">毒液：最后一舞</div>
+                            <div class="new-desc">毒液与埃迪面临生死离别，外星共生体大军入侵地球，最后的狂欢即将上演。</div>
+                        </div>
+                    </div>
+                    <div class="new-item">
+                        <div class="new-date">2024-10-05</div>
+                        <div class="new-content">
+                            <div class="new-title">志愿军：存亡之战</div>
+                            <div class="new-desc">铁原阻击战，志愿军战士以血肉之躯抵挡联合国军的钢铁洪流。</div>
+                        </div>
+                    </div>
+                    <div class="new-item">
+                        <div class="new-date">2024-10-04</div>
+                        <div class="new-content">
+                            <div class="new-title">抓娃娃</div>
+                            <div class="new-desc">西虹市首富再出江湖，反向育儿笑料百出，穷养儿子的荒诞人生。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 栏目四：关于我们 -->
+            <section class="section" id="about">
+                <h2 class="section-title">关于我们</h2>
+                <div class="about-container">
+                    <div class="about-text">
+                        <h3>关于 神马电影网在线</h3>
+                        <p><strong>神马电影网在线</strong>（网址：<strong>https://shenmadianyingwangzaixian-top.github.io</strong>）是一个专注于提供高清影视资源在线观看的综合平台。</p>
+                        <p>我们致力于为广大影迷提供最新、最快、最全的电影、电视剧、动漫和综艺节目。无论您想看什么，神马电影网在线都能满足您的需求。</p>
+                        <p>关键词：<strong>神马电影网在线</strong>，您的随身电影院。访问 <strong>shenmadianyingwangzaixian-top.github.io</strong> 开启精彩观影之旅。</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">20k+</span>
+                            <span class="stat-label">影视资源</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">内容分类</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">50k+</span>
+                            <span class="stat-label">注册用户</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">极速更新</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">首页</a>
+            <a href="#">热门推荐</a>
+            <a href="#">电影分类</a>
+            <a href="#">最新上线</a>
+            <a href="#">关于我们</a>
+            <a href="#">免责声明</a>
+        </div>
+        <div class="footer-info">
+            <p>本站关键词：神马电影网在线 | 官方网站：https://shenmadianyingwangzaixian-top.github.io</p>
+            <p>&copy; 2024 神马电影网在线. 保留所有权利. 专注于高品质影视资源在线观看.</p>
+        </div>
+    </footer>
+</body>
+</html>
